@@ -35,3 +35,10 @@ def addArticle(request):
         messages.success(request,"Makale başarıyla oluşturuldu")
         return redirect("article:dashboard")
     return #render(request,"addarticle.html",{"form":form})
+
+def detail(request,id):
+    #article = Article.objects.filter(id = id).first()   
+    article = get_object_or_404(Article,id = id)
+
+    comments = article.comments.all()
+    return #render(request,"detail.html",{"article":article,"comments":comments})
