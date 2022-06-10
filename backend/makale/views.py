@@ -42,3 +42,20 @@ def detail(request,id):
 
     comments = article.comments.all()
     return #render(request,"detail.html",{"article":article,"comments":comments})
+
+@login_required(login_url = "user:login")
+def updateArticle(request,id):
+
+    article = get_object_or_404(Article,id = id)
+    form = ArticleForm(request.POST or None,request.FILES or None,instance = article)
+    if form.is_valid():
+        article = form.save(commit=False)
+        
+        article.author = request.user
+        article.save()
+
+        messages.success(request,"Makale başarıyla güncellendi")
+        return redirect("article:dashboard")
+
+
+    return #render(request,"update.html",{"form":form})
