@@ -35,7 +35,7 @@ def kayit(request):
     context = {
             "form" : form
         }
-    return render(request,"user_temp/register.html",context)
+    return # render(request,"user_temp/register.html",context)
 
 def cikis(request):
     logout(request)
