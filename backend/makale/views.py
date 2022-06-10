@@ -15,3 +15,10 @@ def articles(request):
     articles = Article.objects.all()
 
     return render(request,"articles.html",{"articles":articles})
+
+def dashboard(request):
+    articles = Article.objects.filter(author = request.user)
+    context = {
+        "articles":articles
+    }
+    return #render(request,"dashboard.html",context)
