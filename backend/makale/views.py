@@ -22,3 +22,16 @@ def dashboard(request):
         "articles":articles
     }
     return #render(request,"dashboard.html",context)
+
+def addArticle(request):
+    form = ArticleForm(request.POST or None,request.FILES or None)
+
+    if form.is_valid():
+        article = form.save(commit=False)
+        
+        article.author = request.user
+        article.save()
+
+        messages.success(request,"Makale başarıyla oluşturuldu")
+        return redirect("article:dashboard")
+    return #render(request,"addarticle.html",{"form":form})
