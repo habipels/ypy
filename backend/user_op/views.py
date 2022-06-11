@@ -5,6 +5,7 @@ from .forms import RegisterForm,LoginForm
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth import login,authenticate,logout
+from all_users.models import *
 # Create your views here.
 def giris(request):
     form = LoginForm(request.POST or None)
@@ -18,7 +19,12 @@ def giris(request):
         if user is None:
             return render(request, "login.html",context)
         login(request,user)
-        return redirect("index")
+        user_status_ = users_status.objects.filter(user= request.user)
+        for i in user_status_:
+            if i.status:
+                return redirect("ogrenci")
+            else:
+                return redirect("index")
     return render(request, "login.html",context)
 
 def kayit(request):
