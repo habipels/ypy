@@ -20,4 +20,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("user/",include("user_op.urls")),
     path("",home,name="index"),
+    path("ogrenci/",home,name="ogrenci"),
 ]
