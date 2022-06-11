@@ -16,10 +16,10 @@ def giris(request):
         password = form.cleaned_data.get("password")
         user = authenticate(username = username,password = password)
         if user is None:
-            return #login front
+            return render(request, "login.html",context)
         login(request,user)
         return redirect("index")
-    return  #login front
+    return render(request, "login.html",context)
 
 def kayit(request):
     form = RegisterForm(request.POST or None)
