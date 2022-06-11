@@ -24,7 +24,7 @@ def giris(request):
             if i.status:
                 return redirect("ogrenci")
             else:
-                return redirect("index")
+                return redirect("akademisyen")
     return render(request, "login.html",context)
 
 def kayit(request):

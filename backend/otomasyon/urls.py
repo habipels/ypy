@@ -21,4 +21,5 @@ urlpatterns = [
     path("user/",include("user_op.urls")),
     path("",home,name="index"),
     path("ogrenci/",home,name="ogrenci"),
+    path("akademisyen/",home,name="akademisyen"),
 ]
