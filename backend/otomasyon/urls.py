@@ -22,4 +22,5 @@ urlpatterns = [
     path("",home,name="index"),
     path("ogrenci/",home,name="ogrenci"),
     path("akademisyen/",home,name="akademisyen"),
+    path('articles/',include("makale.urls")),
 ]
