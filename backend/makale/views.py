@@ -21,7 +21,7 @@ def dashboard(request):
     context = {
         "articles":articles
     }
-    return #render(request,"dashboard.html",context)
+    return render(request,"dashboard.html",context)
 
 def addArticle(request):
     form = ArticleForm(request.POST or None,request.FILES or None)
