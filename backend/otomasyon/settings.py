@@ -116,7 +116,7 @@ USE_L10N = True
 USE_TZ = True
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = "pillow"
-ROOT_URLCONF = 'neos_kariyer.urls'
+
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': None,
