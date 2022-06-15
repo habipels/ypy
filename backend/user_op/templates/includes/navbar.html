@@ -10,7 +10,15 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{% url 'article:articles'  %}">Makaleler</a>
             </li>
-            
+             {% if request.user.is_authenticated %}
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'article:dashboard'  %}">Kontrol Paneli</a>
+          </li>
+          
+          {% else %}
+
+          
+          {% endif %}
           </ul>
 
           
