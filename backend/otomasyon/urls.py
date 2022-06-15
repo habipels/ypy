@@ -23,4 +23,5 @@ urlpatterns = [
     path("ogrenci/",home,name="ogrenci"),
     path("akademisyen/",home,name="akademisyen"),
     path('articles/',include("makale.urls")),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]

@@ -38,6 +38,7 @@ INSTALLED_APPS = ["user_op","makale","crispy_forms",
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'ckeditor','ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -113,7 +114,21 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+ROOT_URLCONF = 'neos_kariyer.urls'
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': None,
+    },
+}
+CKEDITOR_CONFIGS = {
+    "default": {
+        "removePlugins": "stylesheetparser",
+        "allowedContent" : True,
+        "width" : "100%",
+    }
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
