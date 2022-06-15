@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = ["user_op","makale",
+INSTALLED_APPS = ["user_op","makale","crispy_forms",
     "all_users","dersler",
     'django.contrib.admin',
     'django.contrib.auth',
